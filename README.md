@@ -1,16 +1,63 @@
-# React + Vite
+# Residencial Los Robles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada para apoyar la gestión y comunicación entre la mesa directiva y los residentes del **Residencial Los Robles**.
 
-Currently, two official plugins are available:
+Este proyecto forma parte de una actividad académica en la que se aplica la metodología ágil **Scrum** para la planificación y desarrollo de un proyecto web.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Objetivo del proyecto
 
-## React Compiler
+Desarrollar una aplicación web que facilite a los residentes el acceso a información relacionada con su comunidad, como cuotas, adeudos, avisos y otros servicios de la administración del residencial.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- React
+- JavaScript
+- HTML
+- CSS
+- Vite
+- Git
+- GitHub
+- Jira
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Metodología
+
+El proyecto se desarrolla utilizando la metodología ágil **Scrum**.
+
+El trabajo se organiza mediante un Product Backlog compuesto por historias de usuario que se distribuyen en diferentes Sprints de acuerdo con su prioridad.
+
+## Sprint 1
+
+### Objetivo del Sprint
+
+Desarrollar las funciones básicas de acceso e identificación de los residentes y permitir la consulta de cuotas y adeudos dentro de la aplicación.
+
+### Historias de usuario desarrolladas
+
+**HU-01 — Registro e inicio de sesión de residentes**
+
+Permite al residente visualizar un formulario de registro, crear una cuenta, iniciar sesión y acceder al panel principal de la aplicación.
+
+**HU-02 — Consulta de cuotas y adeudos**
+
+Permite al residente consultar sus cuotas de mantenimiento, identificar pagos realizados y visualizar los adeudos pendientes.
+
+## Funcionalidades implementadas
+
+- Registro de residentes.
+- Inicio de sesión.
+- Cierre de sesión.
+- Panel principal del residente.
+- Consulta de cuotas.
+- Consulta de adeudos.
+- Visualización del estado de los pagos.
+- Sección de avisos.
+- Perfil del residente.
+
+## Ejecución del proyecto
+
+Para ejecutar el proyecto de manera local es necesario tener instalado Node.js.
+
+Instalar las dependencias:
+
+```bash
+npm install
