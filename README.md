@@ -61,6 +61,7 @@ Instalar las dependencias:
 
 ```bash
 npm install
+```
 
 ## Planificación completa de Sprints
 
