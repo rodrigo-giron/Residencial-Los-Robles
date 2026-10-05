@@ -485,3 +485,217 @@ footer {
 .cambiar-formulario button:hover {
   text-decoration: underline;
 }
+/* SPRINT 2 - GESTIÓN DE PAGOS */
+
+.pago-card {
+  max-width: 700px;
+  margin-top: 30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.pago-card h3 {
+  color: #183b56;
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+.pago-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.pago-dato {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.pago-dato span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+.pago-dato strong {
+  display: block;
+  color: #183b56;
+  font-size: 18px;
+}
+
+.estado-pendiente {
+  color: #d97706 !important;
+}
+
+.estado-pagado {
+  color: #16a34a !important;
+}
+
+.boton-pagar {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.boton-pagar:hover {
+  background: #1d4ed8;
+}
+
+/* CONFIRMACIÓN DEL PAGO */
+
+.pago-exitoso {
+  margin-top: 20px;
+  padding: 22px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pago-exitoso .check {
+  width: 45px;
+  height: 45px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #16a34a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.pago-exitoso h3 {
+  color: #166534;
+  margin-bottom: 7px;
+}
+
+.pago-exitoso p {
+  color: #15803d;
+  line-height: 1.5;
+}
+
+.cuenta-corriente {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 7px 12px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* HISTORIAL DE PAGOS */
+
+.historial-pagos {
+  max-width: 700px;
+  margin-top: 35px;
+}
+
+.historial-pagos h3 {
+  color: #183b56;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+
+.historial-fila {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.historial-fila:first-of-type {
+  border-radius: 10px 10px 0 0;
+}
+
+.historial-fila:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.historial-fila + .historial-fila {
+  border-top: none;
+}
+
+.historial-fila span {
+  color: #64748b;
+}
+
+.historial-fila strong {
+  color: #183b56;
+}
+
+.historial-fila small {
+  color: #16a34a;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* SPRINT 2 - AVISOS Y NOTIFICACIONES */
+
+.aviso {
+  position: relative;
+}
+
+.aviso-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.aviso-tipo {
+  display: inline-block;
+  padding: 6px 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.aviso-fecha {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* RESPONSIVE SPRINT 2 */
+
+@media (max-width: 650px) {
+  .pago-info {
+    grid-template-columns: 1fr;
+  }
+
+  .historial-fila {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .historial-fila small {
+    text-align: left;
+  }
+
+  .aviso-cabecera {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+}
