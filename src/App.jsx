@@ -5,6 +5,8 @@ function App() {
   const [vista, setVista] = useState("login");
   const [sesion, setSesion] = useState(false);
   const [pagoRealizado, setPagoRealizado] = useState(false);
+  const [reporteEnviado, setReporteEnviado] = useState(false);
+  const [emergenciaContactada, setEmergenciaContactada] = useState(false);
 
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -19,6 +21,14 @@ function App() {
 
   const realizarPago = () => {
     setPagoRealizado(true);
+  };
+
+  const enviarReporte = () => {
+    setReporteEnviado(true);
+  };
+
+  const contactarEmergencias = () => {
+    setEmergenciaContactada(true);
   };
 
   if (!sesion) {
@@ -121,17 +131,37 @@ function App() {
         </div>
 
         <nav>
-          <button onClick={() => setVista("inicio")}>Inicio</button>
+          <button onClick={() => setVista("inicio")}>
+            Inicio
+          </button>
 
-          <button onClick={() => setVista("cuotas")}>Mis cuotas</button>
+          <button onClick={() => setVista("cuotas")}>
+            Mis cuotas
+          </button>
 
-          <button onClick={() => setVista("pagos")}>Pagos</button>
+          <button onClick={() => setVista("pagos")}>
+            Pagos
+          </button>
 
-          <button onClick={() => setVista("avisos")}>Avisos</button>
+          <button onClick={() => setVista("avisos")}>
+            Avisos
+          </button>
 
-          <button onClick={() => setVista("perfil")}>Mi perfil</button>
+          <button onClick={() => setVista("reportes")}>
+            Reportes
+          </button>
 
-          <button onClick={cerrarSesion}>Cerrar sesión</button>
+          <button onClick={() => setVista("emergencias")}>
+            Emergencias
+          </button>
+
+          <button onClick={() => setVista("perfil")}>
+            Mi perfil
+          </button>
+
+          <button onClick={cerrarSesion}>
+            Cerrar sesión
+          </button>
         </nav>
       </header>
 
@@ -233,100 +263,100 @@ function App() {
         )}
 
         {vista === "pagos" && (
-  <section className="pagina">
-    <span className="etiqueta">P-03 · SPRINT 2</span>
+          <section className="pagina">
+            <span className="etiqueta">P-03 · SPRINT 2</span>
 
-    <h2>Gestión de pagos</h2>
+            <h2>Gestión de pagos</h2>
 
-    <p>
-      Consulta tus pagos pendientes y registra el pago de tu cuota
-      de mantenimiento.
-    </p>
+            <p>
+              Consulta tus pagos pendientes y registra el pago de tu cuota
+              de mantenimiento.
+            </p>
 
-    <div className="pago-card">
-      <h3>Cuota de mantenimiento</h3>
+            <div className="pago-card">
+              <h3>Cuota de mantenimiento</h3>
 
-      <div className="pago-info">
+              <div className="pago-info">
 
-        <div className="pago-dato">
-          <span>Periodo</span>
-          <strong>Agosto 2026</strong>
-        </div>
+                <div className="pago-dato">
+                  <span>Periodo</span>
+                  <strong>Agosto 2026</strong>
+                </div>
 
-        <div className="pago-dato">
-          <span>Importe</span>
-          <strong>$850.00</strong>
-        </div>
+                <div className="pago-dato">
+                  <span>Importe</span>
+                  <strong>$850.00</strong>
+                </div>
 
-        <div className="pago-dato">
-          <span>Fecha límite</span>
-          <strong>10 de septiembre de 2026</strong>
-        </div>
+                <div className="pago-dato">
+                  <span>Fecha límite</span>
+                  <strong>10 de septiembre de 2026</strong>
+                </div>
 
-        <div className="pago-dato">
-          <span>Estado</span>
-          <strong
-            className={
-              pagoRealizado
-                ? "estado-pagado"
-                : "estado-pendiente"
-            }
-          >
-            {pagoRealizado ? "✓ Pagado" : "● Pendiente"}
-          </strong>
-        </div>
+                <div className="pago-dato">
+                  <span>Estado</span>
+                  <strong
+                    className={
+                      pagoRealizado
+                        ? "estado-pagado"
+                        : "estado-pendiente"
+                    }
+                  >
+                    {pagoRealizado ? "✓ Pagado" : "● Pendiente"}
+                  </strong>
+                </div>
 
-      </div>
+              </div>
 
-      {!pagoRealizado ? (
-        <div>
-          <button
-            className="boton-pagar"
-            onClick={realizarPago}
-          >
-            Registrar pago de $850.00
-          </button>
-        </div>
-      ) : (
-        <div className="pago-exitoso">
-          <div className="check">✓</div>
+              {!pagoRealizado ? (
+                <div>
+                  <button
+                    className="boton-pagar"
+                    onClick={realizarPago}
+                  >
+                    Registrar pago de $850.00
+                  </button>
+                </div>
+              ) : (
+                <div className="pago-exitoso">
+                  <div className="check">✓</div>
 
-          <h3>Pago registrado</h3>
+                  <h3>Pago registrado</h3>
 
-          <p>
-            La cuota de agosto de 2026 se registró correctamente.
-          </p>
+                  <p>
+                    La cuota de agosto de 2026 se registró correctamente.
+                  </p>
 
-          <span className="cuenta-corriente">
-            Cuenta al corriente
-          </span>
-        </div>
-      )}
-    </div>
+                  <span className="cuenta-corriente">
+                    Cuenta al corriente
+                  </span>
+                </div>
+              )}
+            </div>
 
-    <div className="historial-pagos">
-      <h3>Historial de pagos</h3>
+            <div className="historial-pagos">
+              <h3>Historial de pagos</h3>
 
-      <div className="historial-fila">
-        <span>Julio 2026</span>
-        <span>$850.00</span>
-        <small>Pagado</small>
-      </div>
+              <div className="historial-fila">
+                <span>Julio 2026</span>
+                <span>$850.00</span>
+                <small>Pagado</small>
+              </div>
 
-      <div className="historial-fila">
-        <span>Junio 2026</span>
-        <span>$850.00</span>
-        <small>Pagado</small>
-      </div>
+              <div className="historial-fila">
+                <span>Junio 2026</span>
+                <span>$850.00</span>
+                <small>Pagado</small>
+              </div>
 
-      <div className="historial-fila">
-        <span>Mayo 2026</span>
-        <span>$850.00</span>
-        <small>Pagado</small>
-      </div>
-    </div>
-  </section>
-)}
+              <div className="historial-fila">
+                <span>Mayo 2026</span>
+                <span>$850.00</span>
+                <small>Pagado</small>
+              </div>
+            </div>
+          </section>
+        )}
 
         {vista === "avisos" && (
           <section className="pagina">
@@ -380,6 +410,144 @@ function App() {
                 de sus vehículos para facilitar el acceso al residencial.
               </p>
             </div>
+          </section>
+        )}
+
+        {vista === "reportes" && (
+          <section className="pagina">
+
+            <span className="etiqueta">
+              P-05 · SPRINT 3
+            </span>
+
+            <h2>Reportes e incidencias</h2>
+
+            <p>
+              Registra problemas o incidencias dentro del residencial
+              para que puedan ser atendidos por la administración.
+            </p>
+
+            <div className="reporte-panel">
+
+              <h3>Nuevo reporte</h3>
+
+              <label>Tipo de incidencia</label>
+
+              <select>
+                <option>Alumbrado</option>
+                <option>Seguridad</option>
+                <option>Áreas comunes</option>
+                <option>Servicios</option>
+                <option>Otro</option>
+              </select>
+
+              <label>Descripción</label>
+
+              <textarea
+                placeholder="Describe la incidencia..."
+                rows="5"
+              ></textarea>
+
+              {!reporteEnviado ? (
+                <button
+                  className="boton-principal"
+                  onClick={enviarReporte}
+                >
+                  Enviar reporte
+                </button>
+              ) : (
+                <div className="reporte-exitoso">
+                  <div className="check-reporte">✓</div>
+
+                  <h3>Reporte enviado</h3>
+
+                  <p>
+                    La incidencia fue registrada correctamente.
+                  </p>
+
+                  <strong>
+                    La administración revisará el reporte.
+                  </strong>
+                </div>
+              )}
+
+            </div>
+
+          </section>
+        )}
+
+        {vista === "emergencias" && (
+          <section className="pagina">
+
+            <span className="etiqueta">
+              P-06 · SPRINT 3
+            </span>
+
+            <h2>Emergencias</h2>
+
+            <p>
+              Consulta información de contacto para solicitar ayuda
+              ante una situación de emergencia dentro del residencial.
+            </p>
+
+            <div className="emergencias-panel">
+
+              <div className="emergencias-icono">
+                🚨
+              </div>
+
+              <h3>Contactos de emergencia</h3>
+
+              <div className="contacto-emergencia">
+                <span>Policía</span>
+                <strong>911</strong>
+              </div>
+
+              <div className="contacto-emergencia">
+                <span>Bomberos</span>
+                <strong>911</strong>
+              </div>
+
+              <div className="contacto-emergencia">
+                <span>Protección Civil</span>
+                <strong>911</strong>
+              </div>
+
+              <div className="contacto-emergencia">
+                <span>Atención médica</span>
+                <strong>911</strong>
+              </div>
+
+              {!emergenciaContactada ? (
+                <button
+                  className="boton-emergencia"
+                  onClick={contactarEmergencias}
+                >
+                  🚨 Contactar emergencias
+                </button>
+              ) : (
+                <div className="emergencia-confirmada">
+
+                  <div className="check-emergencia">
+                    ✓
+                  </div>
+
+                  <h3>Solicitud de emergencia</h3>
+
+                  <p>
+                    En este prototipo académico se simuló el contacto
+                    con el servicio de emergencias.
+                  </p>
+
+                  <strong>
+                    Llamada al 911 preparada.
+                  </strong>
+
+                </div>
+              )}
+
+            </div>
+
           </section>
         )}
 
