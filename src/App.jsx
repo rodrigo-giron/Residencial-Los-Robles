@@ -7,6 +7,7 @@ function App() {
   const [pagoRealizado, setPagoRealizado] = useState(false);
   const [reporteEnviado, setReporteEnviado] = useState(false);
   const [emergenciaContactada, setEmergenciaContactada] = useState(false);
+  const [votoRealizado, setVotoRealizado] = useState(false);
 
   const iniciarSesion = (e) => {
     e.preventDefault();
@@ -29,6 +30,10 @@ function App() {
 
   const contactarEmergencias = () => {
     setEmergenciaContactada(true);
+  };
+
+  const realizarVoto = () => {
+    setVotoRealizado(true);
   };
 
   if (!sesion) {
@@ -153,6 +158,14 @@ function App() {
 
           <button onClick={() => setVista("emergencias")}>
             Emergencias
+          </button>
+
+          <button onClick={() => setVista("votaciones")}>
+            Votaciones
+          </button>
+
+          <button onClick={() => setVista("mesa")}>
+            Mesa directiva
           </button>
 
           <button onClick={() => setVista("perfil")}>
@@ -545,6 +558,142 @@ function App() {
 
                 </div>
               )}
+
+            </div>
+
+          </section>
+        )}
+
+        {vista === "votaciones" && (
+          <section className="pagina">
+
+            <span className="etiqueta">
+              P-07 · SPRINT 4
+            </span>
+
+            <h2>Votaciones</h2>
+
+            <p>
+              Participa en las decisiones importantes de nuestra comunidad.
+            </p>
+
+            <div className="votacion-panel">
+
+              <h3>Próxima votación vecinal</h3>
+
+              <p className="votacion-pregunta">
+                ¿Qué mejora consideras más importante para el residencial?
+              </p>
+
+              {!votoRealizado ? (
+                <div className="opciones-votacion">
+
+                  <label>
+                    <input type="radio" name="votacion" />
+                    Mejorar la iluminación
+                  </label>
+
+                  <label>
+                    <input type="radio" name="votacion" />
+                    Mejorar la seguridad
+                  </label>
+
+                  <label>
+                    <input type="radio" name="votacion" />
+                    Mejorar las áreas comunes
+                  </label>
+
+                  <button
+                    className="boton-principal"
+                    onClick={realizarVoto}
+                  >
+                    Registrar mi voto
+                  </button>
+
+                </div>
+              ) : (
+                <div className="votacion-exitosa">
+
+                  <div className="check-votacion">✓</div>
+
+                  <h3>Voto registrado</h3>
+
+                  <p>
+                    Tu participación fue registrada correctamente.
+                  </p>
+
+                  <strong>
+                    Gracias por participar en la decisión de la comunidad.
+                  </strong>
+
+                </div>
+              )}
+
+            </div>
+
+          </section>
+        )}
+
+        {vista === "mesa" && (
+          <section className="pagina">
+
+            <span className="etiqueta">
+              P-08 · SPRINT 4
+            </span>
+
+            <h2>Mesa directiva</h2>
+
+            <p>
+              Conoce a los integrantes responsables de la administración
+              y organización del residencial.
+            </p>
+
+            <div className="mesa-panel">
+
+              <h3>Integrantes de la mesa directiva</h3>
+
+              <div className="directiva-grid">
+
+                <div className="directiva-card">
+                  <div className="directiva-avatar">P</div>
+
+                  <h3>Don Pedro</h3>
+
+                  <span>Presidente</span>
+
+                  <p>
+                    Responsable de coordinar las actividades y representar
+                    a la comunidad.
+                  </p>
+                </div>
+
+                <div className="directiva-card">
+                  <div className="directiva-avatar">L</div>
+
+                  <h3>Doña Laura</h3>
+
+                  <span>Tesorera</span>
+
+                  <p>
+                    Responsable de administrar las cuotas y llevar el
+                    control de los recursos de la comunidad.
+                  </p>
+                </div>
+
+                <div className="directiva-card">
+                  <div className="directiva-avatar">J</div>
+
+                  <h3>Don Jaime</h3>
+
+                  <span>Secretario</span>
+
+                  <p>
+                    Responsable de registrar acuerdos y mantener la
+                    documentación de las reuniones.
+                  </p>
+                </div>
+
+              </div>
 
             </div>
 
