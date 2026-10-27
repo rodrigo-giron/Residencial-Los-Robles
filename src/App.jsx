@@ -168,6 +168,14 @@ function App() {
             Mesa directiva
           </button>
 
+          <button onClick={() => setVista("reglamento")}>
+            Reglamento
+          </button>
+
+          <button onClick={() => setVista("seguimiento")}>
+            Seguimiento
+          </button>
+
           <button onClick={() => setVista("perfil")}>
             Mi perfil
           </button>
@@ -693,6 +701,138 @@ function App() {
                   </p>
                 </div>
 
+              </div>
+
+            </div>
+
+          </section>
+        )}
+
+        {vista === "reglamento" && (
+          <section className="pagina">
+
+            <span className="etiqueta">
+              P-09 · SPRINT 5
+            </span>
+
+            <h2>Reglamento del residencial</h2>
+
+            <p>
+              Consulta las principales normas para mantener una convivencia
+              ordenada y segura dentro de nuestra comunidad.
+            </p>
+
+            <div className="reglamento-panel">
+
+              <h3>Normas de convivencia</h3>
+
+              <div className="regla">
+                <h4>Convivencia</h4>
+                <p>
+                  Mantener una convivencia respetuosa con los demás residentes
+                  y evitar actividades que afecten la tranquilidad de la comunidad.
+                </p>
+              </div>
+
+              <div className="regla">
+                <h4>Áreas comunes</h4>
+                <p>
+                  Las áreas comunes deben utilizarse de manera responsable,
+                  respetando los horarios y manteniendo los espacios limpios.
+                </p>
+              </div>
+
+              <div className="regla">
+                <h4>Seguridad</h4>
+                <p>
+                  Mantener cerrados los accesos correspondientes y reportar
+                  cualquier situación que pueda representar un riesgo para
+                  los residentes.
+                </p>
+              </div>
+
+              <div className="regla">
+                <h4>Mascotas</h4>
+                <p>
+                  Las mascotas deberán mantenerse bajo control de sus
+                  propietarios y no deberán causar molestias a otros residentes.
+                </p>
+              </div>
+
+              <div className="regla">
+                <h4>Estacionamiento</h4>
+                <p>
+                  Respetar los espacios asignados y evitar obstruir accesos,
+                  áreas de circulación o lugares destinados a emergencias.
+                </p>
+              </div>
+
+              <div className="regla">
+                <h4>Cuotas y obligaciones</h4>
+                <p>
+                  Los residentes deben mantener al corriente sus cuotas de
+                  mantenimiento y cumplir con las obligaciones establecidas
+                  por la administración.
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+        )}
+
+        {vista === "seguimiento" && (
+          <section className="pagina">
+
+            <span className="etiqueta">
+              P-10 · SPRINT 5
+            </span>
+
+            <h2>Seguimiento de reportes</h2>
+
+            <p>
+              Consulta el estado de las incidencias que has registrado
+              dentro del residencial.
+            </p>
+
+            <div className="seguimiento-panel">
+
+              <h3>Mis reportes</h3>
+
+              <div className="reporte-item">
+                <div>
+                  <span className="reporte-tipo">Alumbrado</span>
+                  <h4>Falla de iluminación en área común</h4>
+                  <p>20 de octubre de 2026</p>
+                </div>
+
+                <span className="estado-reporte revision">
+                  En revisión
+                </span>
+              </div>
+
+              <div className="reporte-item">
+                <div>
+                  <span className="reporte-tipo">Seguridad</span>
+                  <h4>Acceso principal requiere mantenimiento</h4>
+                  <p>18 de octubre de 2026</p>
+                </div>
+
+                <span className="estado-reporte atendido">
+                  Atendido
+                </span>
+              </div>
+
+              <div className="reporte-item">
+                <div>
+                  <span className="reporte-tipo">Áreas comunes</span>
+                  <h4>Lámpara dañada en zona de convivencia</h4>
+                  <p>15 de octubre de 2026</p>
+                </div>
+
+                <span className="estado-reporte pendiente">
+                  Pendiente
+                </span>
               </div>
 
             </div>

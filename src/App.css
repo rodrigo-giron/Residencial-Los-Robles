@@ -33,7 +33,7 @@ button {
   gap: 12px;
 }
 
-.logo > span {
+.logo>span {
   font-size: 32px;
 }
 
@@ -217,7 +217,7 @@ main {
   margin-bottom: 10px;
 }
 
-.pagina > p {
+.pagina>p {
   color: #64748b;
   margin-bottom: 35px;
 }
@@ -485,6 +485,7 @@ footer {
 .cambiar-formulario button:hover {
   text-decoration: underline;
 }
+
 /* SPRINT 2 - GESTIÓN DE PAGOS */
 
 .pago-card {
@@ -629,7 +630,7 @@ footer {
   border-radius: 0 0 10px 10px;
 }
 
-.historial-fila + .historial-fila {
+.historial-fila+.historial-fila {
   border-top: none;
 }
 
@@ -803,7 +804,7 @@ footer {
   min-height: 120px;
 }
 
-.reporte-panel > .boton-principal {
+.reporte-panel>.boton-principal {
   width: 100%;
   margin-top: 25px;
 }
@@ -860,7 +861,7 @@ footer {
   font-size: 32px;
 }
 
-.emergencias-panel > h3 {
+.emergencias-panel>h3 {
   text-align: center;
   color: #183b56;
   font-size: 24px;
@@ -1022,7 +1023,7 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.mesa-panel > h3 {
+.mesa-panel>h3 {
   text-align: center;
   color: #183b56;
   font-size: 24px;
@@ -1062,7 +1063,7 @@ footer {
   margin-bottom: 6px;
 }
 
-.directiva-card > span {
+.directiva-card>span {
   color: #2563eb;
   font-size: 14px;
   font-weight: bold;
@@ -1078,5 +1079,121 @@ footer {
 @media (max-width: 800px) {
   .directiva-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/*REGLAMENTO - SPRINT 5*/
+
+.reglamento-panel {
+  max-width: 900px;
+  margin: 35px auto 0;
+  background: white;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.reglamento-panel>h3 {
+  color: #183b56;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.regla {
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.regla:last-child {
+  border-bottom: none;
+}
+
+.regla h4 {
+  color: #183b56;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.regla p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/*SEGUIMIENTO DE REPORTES - SPRINT 5*/
+
+.seguimiento-panel {
+  max-width: 900px;
+  margin: 35px auto 0;
+  background: white;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.seguimiento-panel>h3 {
+  color: #183b56;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.reporte-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 5px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.reporte-item:last-child {
+  border-bottom: none;
+}
+
+.reporte-tipo {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.reporte-item h4 {
+  color: #183b56;
+  margin: 7px 0;
+}
+
+.reporte-item p {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.estado-reporte {
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.estado-reporte.revision {
+  color: #d97706;
+  background: #fff7ed;
+}
+
+.estado-reporte.atendido {
+  color: #16a34a;
+  background: #f0fdf4;
+}
+
+.estado-reporte.pendiente {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+@media (max-width: 800px) {
+  .reporte-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
